@@ -22,7 +22,20 @@ body {
 
 /* Header & Hero */
 header { padding: 80px 0 40px; text-align: center; }
-.profile-photo { width: 110px; height: 110px; border-radius: 50%; border: 1px solid var(--border); margin-bottom: 1rem; }
+.profile-photo {
+    width: 110px;
+    height: 110px;
+    display: block;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+
+    /* prevent image distortion: crop to fit the circular frame */
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1 / 1;
+}
+
 h1 { font-size: 2.2rem; font-weight: 600; }
 .tagline { color: var(--text-secondary); margin-bottom: 1.5rem; }
 .links a { color: var(--text-main); font-size: 1.3rem; margin: 0 12px; transition: opacity 0.2s; }
