@@ -29,6 +29,17 @@
         <section id="experience">
             <h2 class="section-title">Professional Experience</h2>
             <div class="experience-item">
+                <div class="resume-dropdown">
+                    <button id="toggle-resume" class="btn-minimal">
+                        View Full Resume <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="resume-viewer" class="pdf-container hidden">
+                        <embed src="resume.pdf" type="application/pdf" width="100%" height="600px" />
+                        <p class="mobile-fallback">
+                            PDF viewer not supported? <a href="resume.pdf" target="_blank">Download Resume (PDF)</a>
+                        </p>
+                    </div>
+                </div>
                 <div class="item-header">
                     <h3>Software Engineer Intern</h3>
                     <span class="date">Summer 2025</span>
