@@ -1,1 +1,0 @@
-# Shota-Gen.github.io
