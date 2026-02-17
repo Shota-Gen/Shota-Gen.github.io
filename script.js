@@ -28,3 +28,23 @@ style.innerHTML = `
     }
 `;
 document.head.appendChild(style);
+
+// Existing DOMContentLoaded logic...
+
+const resumeBtn = document.getElementById('toggle-resume');
+const resumeViewer = document.getElementById('resume-viewer');
+const icon = resumeBtn.querySelector('i');
+
+resumeBtn.addEventListener('click', () => {
+    const isHidden = resumeViewer.classList.contains('hidden');
+    
+    if (isHidden) {
+        resumeViewer.classList.remove('hidden');
+        icon.classList.add('rotate');
+        resumeBtn.innerHTML = `Close Resume <i class="fas fa-chevron-down rotate"></i>`;
+    } else {
+        resumeViewer.classList.add('hidden');
+        icon.classList.remove('rotate');
+        resumeBtn.innerHTML = `View Full Resume <i class="fas fa-chevron-down"></i>`;
+    }
+});
