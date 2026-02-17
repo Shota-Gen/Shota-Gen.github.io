@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shota Gen | Software Engineer</title>
+    <title>Shota Gen | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <header>
-        <div class="container profile-header">
+        <div class="container hero">
             <img src="your-photo.jpg" alt="Shota Gen" class="profile-photo">
             <h1>Shota Gen</h1>
-            <p class="intro">Computer Science student at the University of Michigan. Passionate about building scalable backend systems, iOS development, and distributed computing.</p>
+            <p class="tagline">Software Engineer & CS Student at the University of Michigan</p>
+            <p class="bio">Focused on distributed systems, iOS development, and backend scalability.</p>
             
-            <div class="social-links">
-                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <div class="links">
+                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </header>
@@ -25,41 +27,44 @@
     <main class="container">
         
         <section id="experience">
-            <h2>Professional Experience</h2>
-            <div class="card">
-                <h3>Software Engineer Intern</h3>
-                <p class="subtitle">Tech Startup | Shibuya, Tokyo — Summer 2025</p>
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-item">
+                <div class="item-header">
+                    <h3>Software Engineer Intern</h3>
+                    <span class="date">Summer 2025</span>
+                </div>
+                <p class="company">Tech Startup | Shibuya, Tokyo</p>
                 <ul>
-                    <li>Automated critical data extraction processes to improve workflow efficiency.</li>
-                    <li>Worked as the primary software engineering intern in a fast-paced startup environment.</li>
+                    <li>Automated data extraction processes and improved system reliability.</li>
+                    <li>Developed backend tools as the sole engineering intern.</li>
                 </ul>
             </div>
         </section>
 
-        <section id="technical-projects">
-            <h2>Technical Projects</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>StudyConnect (iOS)</h3>
-                    <p>A SwiftUI-based application designed to help students find friends at various study spots in real-time.</p>
+        <section id="projects">
+            <h2 class="section-title">Technical Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>StudyConnect</h3>
+                    <p>An iOS application built with SwiftUI for real-time study-spot networking.</p>
                 </div>
-                <div class="card">
+                <div class="project-card">
                     <h3>LLM Evaluation Platform</h3>
-                    <p>Built an evaluation framework using LangSmith to benchmark and monitor large language model performance.</p>
+                    <p>A framework using LangSmith to benchmark performance across various LLMs.</p>
                 </div>
             </div>
         </section>
 
-        <section id="school-projects">
-            <h2>School Projects</h2>
-            <div class="grid">
-                <div class="card">
+        <section id="school">
+            <h2 class="section-title">School Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
                     <h3>MapReduce Framework</h3>
-                    <p>Implemented a distributed computing system inspired by the Google MapReduce paper, handling large-scale data processing across multiple nodes.</p>
+                    <p>Distributed data processing engine handling large-scale computations.</p>
                 </div>
-                <div class="card">
+                <div class="project-card">
                     <h3>Multi-Threaded C++ Engine</h3>
-                    <p>Developed a high-performance system utilizing mutexes, condition variables, and thread synchronization to manage concurrent tasks.</p>
+                    <p>System featuring advanced synchronization for concurrent task management.</p>
                 </div>
             </div>
         </section>
@@ -67,7 +72,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Shota Gen. Built with HTML, CSS, and JS.</p>
+        <p>&copy; 2026 Shota Gen</p>
     </footer>
 
     <script src="script.js"></script>
