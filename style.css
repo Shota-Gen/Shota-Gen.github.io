@@ -33,8 +33,8 @@ header { padding: 60px 0 40px; }
 .hero-right { padding-right: 1rem; }
 
 .profile-photo {
-    width: 50%;
-    max-width: 190px;
+    width: 100%;
+    max-width: 266px;
     height: auto;
     display: block;
     border-radius: 18px;
@@ -53,7 +53,7 @@ h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; margin: 0; }
 
 @media (max-width: 800px) {
     .container.hero { grid-template-columns: 1fr; text-align: center; }
-    .profile-photo { max-width: 220px; aspect-ratio: 1 / 1; border-radius: 50%; margin: 0 auto 1rem; }
+    .profile-photo { max-width: 154px; aspect-ratio: 1 / 1; border-radius: 50%; margin: 0 auto 1rem; }
     .hero-right { padding-top: 0.5rem; }
     .links { display:flex; justify-content:center; gap: 12px; }
 }
