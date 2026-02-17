@@ -15,8 +15,6 @@
             <img src="your-photo.jpg" alt="Shota Gen" class="profile-photo">
             <h1>Shota Gen</h1>
             <p class="tagline">Software Engineer & CS Student at the University of Michigan</p>
-            <p class="bio">Focused on distributed systems, iOS development, and backend scalability.</p>
-            
             <div class="links">
                 <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
@@ -26,56 +24,67 @@
 
     <main class="container">
         
-        <section id="experience">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="experience-item">
-                <div class="resume-dropdown">
-                    <button id="toggle-resume" class="btn-minimal">
-                        View Full Resume <i class="fas fa-chevron-down"></i>
-                    </button>
+        <section class="dropdown-section">
+            <div class="section-header" onclick="toggleSection('exp-content', this)">
+                <h2 class="section-title">Professional Experience</h2>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div id="exp-content" class="section-content">
+                <div class="experience-item">
+                    <div class="item-header">
+                        <h3>Software Engineer Intern</h3>
+                        <span class="date">Summer 2025</span>
+                    </div>
+                    <p class="company">Tech Startup | Shibuya, Tokyo</p>
+                    <ul>
+                        <li>Automated data extraction processes for internal toolchains.</li>
+                        <li>Built backend services as the primary SWE intern.</li>
+                    </ul>
+                </div>
+
+                <div class="resume-wrapper">
+                    <button id="toggle-resume" class="btn-minimal">View Full Resume PDF</button>
                     <div id="resume-viewer" class="pdf-container hidden">
-                        <embed src="resume.pdf" type="application/pdf" width="100%" height="600px" />
-                        <p class="mobile-fallback">
-                            PDF viewer not supported? <a href="resume.pdf" target="_blank">Download Resume (PDF)</a>
-                        </p>
+                        <embed src="resume.pdf" type="application/pdf" width="100%" height="500px" />
                     </div>
                 </div>
-                <div class="item-header">
-                    <h3>Software Engineer Intern</h3>
-                    <span class="date">Summer 2025</span>
-                </div>
-                <p class="company">Tech Startup | Shibuya, Tokyo</p>
-                <ul>
-                    <li>Automated data extraction processes and improved system reliability.</li>
-                    <li>Developed backend tools as the sole engineering intern.</li>
-                </ul>
             </div>
         </section>
 
-        <section id="projects">
-            <h2 class="section-title">Technical Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>StudyConnect</h3>
-                    <p>An iOS application built with SwiftUI for real-time study-spot networking.</p>
-                </div>
-                <div class="project-card">
-                    <h3>LLM Evaluation Platform</h3>
-                    <p>A framework using LangSmith to benchmark performance across various LLMs.</p>
+        <section class="dropdown-section">
+            <div class="section-header" onclick="toggleSection('tech-content', this)">
+                <h2 class="section-title">Technical Projects</h2>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div id="tech-content" class="section-content">
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>StudyConnect</h3>
+                        <p>iOS app using SwiftUI for campus networking.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>LLM Evaluation Platform</h3>
+                        <p>LangSmith-integrated framework for AI benchmarking.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="school">
-            <h2 class="section-title">School Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>MapReduce Framework</h3>
-                    <p>Distributed data processing engine handling large-scale computations.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Multi-Threaded C++ Engine</h3>
-                    <p>System featuring advanced synchronization for concurrent task management.</p>
+        <section class="dropdown-section">
+            <div class="section-header" onclick="toggleSection('school-content', this)">
+                <h2 class="section-title">School Projects</h2>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div id="school-content" class="section-content">
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>MapReduce Framework</h3>
+                        <p>Distributed system for large-scale data processing.</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Multi-Threaded C++ Engine</h3>
+                        <p>High-concurrency task engine with mutex synchronization.</p>
+                    </div>
                 </div>
             </div>
         </section>
