@@ -153,3 +153,53 @@ footer {
         flex-direction: column;
     }
 }
+
+/* Resume Dropdown Styles */
+.resume-dropdown {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.btn-minimal {
+    background: none;
+    border: 1px solid var(--text-main);
+    color: var(--text-main);
+    padding: 10px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.btn-minimal:hover {
+    background: var(--text-main);
+    color: var(--bg);
+}
+
+.pdf-container {
+    margin-top: 20px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.mobile-fallback {
+    padding: 15px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.btn-minimal i {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
