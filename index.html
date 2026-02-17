@@ -1,100 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shota Gen | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
     <header>
-        <div class="container hero">
-            <img src="your-photo.jpg" alt="Shota Gen" class="profile-photo">
-            <h1>Shota Gen</h1>
-            <p class="tagline">Software Engineer & CS Student at the University of Michigan</p>
-            <div class="links">
-                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
+      <div class="container hero">
+        <img src="your-photo.jpg" alt="Shota Gen" class="profile-photo" />
+        <h1>Shota Gen</h1>
+        <p class="tagline">
+          Software Engineer & CS Student at the University of Michigan
+        </p>
+        <div class="links">
+          <a href="https://linkedin.com/in/yourprofile" target="_blank"
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+          <a href="https://github.com/yourusername" target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
         </div>
+      </div>
     </header>
 
     <main class="container">
-        
-        <section class="dropdown-section">
-            <div class="section-header" onclick="toggleSection('exp-content', this)">
-                <h2 class="section-title">Professional Experience</h2>
-                <i class="fas fa-chevron-down"></i>
+      <section class="dropdown-section">
+        <div
+          class="section-header"
+          role="button"
+          tabindex="0"
+          aria-controls="exp-content"
+          aria-expanded="false"
+          onclick="toggleSection('exp-content', this)"
+        >
+          <h2 class="section-title">Professional Experience</h2>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </div>
+        <div id="exp-content" class="section-content" aria-hidden="true">
+          <div class="experience-item">
+            <div class="item-header">
+              <h3>Software Engineer Intern</h3>
+              <span class="date">Summer 2025</span>
             </div>
-            <div id="exp-content" class="section-content">
-                <div class="experience-item">
-                    <div class="item-header">
-                        <h3>Software Engineer Intern</h3>
-                        <span class="date">Summer 2025</span>
-                    </div>
-                    <p class="company">Tech Startup | Shibuya, Tokyo</p>
-                    <ul>
-                        <li>Automated data extraction processes for internal toolchains.</li>
-                        <li>Built backend services as the primary SWE intern.</li>
-                    </ul>
-                </div>
+            <p class="company">Tech Startup | Shibuya, Tokyo</p>
+            <ul>
+              <li>
+                Automated data extraction processes for internal toolchains.
+              </li>
+              <li>Built backend services as the primary SWE intern.</li>
+            </ul>
+          </div>
 
-                <div class="resume-wrapper">
-                    <button id="toggle-resume" class="btn-minimal">View Full Resume PDF</button>
-                    <div id="resume-viewer" class="pdf-container hidden">
-                        <embed src="resume.pdf" type="application/pdf" width="100%" height="500px" />
-                    </div>
-                </div>
+          <div class="resume-wrapper">
+            <button id="toggle-resume" class="btn-minimal">
+              View Full Resume PDF
+            </button>
+            <div id="resume-viewer" class="pdf-container hidden">
+              <embed
+                src="resume.pdf"
+                type="application/pdf"
+                width="100%"
+                height="500px"
+              />
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section class="dropdown-section">
-            <div class="section-header" onclick="toggleSection('tech-content', this)">
-                <h2 class="section-title">Technical Projects</h2>
-                <i class="fas fa-chevron-down"></i>
+      <section class="dropdown-section">
+        <div
+          class="section-header"
+          role="button"
+          tabindex="0"
+          aria-controls="tech-content"
+          aria-expanded="false"
+          onclick="toggleSection('tech-content', this)"
+        >
+          <h2 class="section-title">Technical Projects</h2>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </div>
+        <div id="tech-content" class="section-content" aria-hidden="true">
+          <div class="project-grid">
+            <div class="project-card">
+              <h3>StudyConnect</h3>
+              <p>iOS app using SwiftUI for campus networking.</p>
             </div>
-            <div id="tech-content" class="section-content">
-                <div class="project-grid">
-                    <div class="project-card">
-                        <h3>StudyConnect</h3>
-                        <p>iOS app using SwiftUI for campus networking.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>LLM Evaluation Platform</h3>
-                        <p>LangSmith-integrated framework for AI benchmarking.</p>
-                    </div>
-                </div>
+            <div class="project-card">
+              <h3>LLM Evaluation Platform</h3>
+              <p>LangSmith-integrated framework for AI benchmarking.</p>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section class="dropdown-section">
-            <div class="section-header" onclick="toggleSection('school-content', this)">
-                <h2 class="section-title">School Projects</h2>
-                <i class="fas fa-chevron-down"></i>
+      <section class="dropdown-section">
+        <div
+          class="section-header"
+          role="button"
+          tabindex="0"
+          aria-controls="school-content"
+          aria-expanded="false"
+          onclick="toggleSection('school-content', this)"
+        >
+          <h2 class="section-title">School Projects</h2>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </div>
+        <div id="school-content" class="section-content" aria-hidden="true">
+          <div class="project-grid">
+            <div class="project-card">
+              <h3>MapReduce Framework</h3>
+              <p>Distributed system for large-scale data processing.</p>
             </div>
-            <div id="school-content" class="section-content">
-                <div class="project-grid">
-                    <div class="project-card">
-                        <h3>MapReduce Framework</h3>
-                        <p>Distributed system for large-scale data processing.</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Multi-Threaded C++ Engine</h3>
-                        <p>High-concurrency task engine with mutex synchronization.</p>
-                    </div>
-                </div>
+            <div class="project-card">
+              <h3>Multi-Threaded C++ Engine</h3>
+              <p>High-concurrency task engine with mutex synchronization.</p>
             </div>
-        </section>
-
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Shota Gen</p>
+      <p>&copy; 2026 Shota Gen</p>
     </footer>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
