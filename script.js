@@ -1,50 +1,31 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const observerOptions = {
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('section').forEach(section => {
-        section.style.opacity = "0";
-        section.style.transform = "translateY(20px)";
-        section.style.transition = "all 0.6s ease-out";
-        observer.observe(section);
-    });
-});
-
-// Added a small CSS injection for the animation class
-const style = document.createElement('style');
-style.innerHTML = `
-    .visible {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-    }
-`;
-document.head.appendChild(style);
-
-// Existing DOMContentLoaded logic...
-
-const resumeBtn = document.getElementById('toggle-resume');
-const resumeViewer = document.getElementById('resume-viewer');
-const icon = resumeBtn.querySelector('i');
-
-resumeBtn.addEventListener('click', () => {
-    const isHidden = resumeViewer.classList.contains('hidden');
+// Function to toggle main portfolio sections
+function toggleSection(id, headerElement) {
+    const content = document.getElementById(id);
+    const icon = headerElement.querySelector('.fa-chevron-down');
     
-    if (isHidden) {
-        resumeViewer.classList.remove('hidden');
+    // Toggle active class
+    content.classList.toggle('active');
+    
+    // Rotate chevron
+    if (content.classList.contains('active')) {
         icon.classList.add('rotate');
-        resumeBtn.innerHTML = `Close Resume <i class="fas fa-chevron-down rotate"></i>`;
     } else {
-        resumeViewer.classList.add('hidden');
         icon.classList.remove('rotate');
-        resumeBtn.innerHTML = `View Full Resume <i class="fas fa-chevron-down"></i>`;
+    }
+}
+
+// Logic for the nested Resume PDF viewer
+document.addEventListener('DOMContentLoaded', () => {
+    const resumeBtn = document.getElementById('toggle-resume');
+    const resumeViewer = document.getElementById('resume-viewer');
+
+    if (resumeBtn) {
+        resumeBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevents section from closing
+            resumeViewer.classList.toggle('hidden');
+            resumeBtn.textContent = resumeViewer.classList.contains('hidden') 
+                ? "View Full Resume PDF" 
+                : "Close Resume PDF";
+        });
     }
 });
