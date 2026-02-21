@@ -274,13 +274,184 @@
         </div>
         <div id="tech-content" class="section-content" aria-hidden="true">
           <div class="project-grid">
+            <!-- StudyConnect -->
             <div class="project-card">
-              <h3>StudyConnect</h3>
-              <p>iOS app using SwiftUI for campus networking.</p>
+              <div class="project-card-header">
+                <h3>StudyConnect</h3>
+                <span class="project-date">Winter 2026</span>
+              </div>
+              <p>
+                <strong>Technologies: </strong>Swift, Python, PostgreSQL, ARKit,
+                Google Cloud API, CoreLocation, Google Stitch, Figma, XCode
+              </p>
+              <p>
+                Developed a campus-centric iOS app for real-time peer
+                coordination by mapping user presence within geofenced "Study
+                Zones" and utilizing Ultra-Wideband (UWB) for precise indoor
+                friend-discovery. As Product Manager, directed end-to-end
+                development by leading team meetings, delegating technical tasks
+                across the stack, and personally designing the UI/UX to ensure a
+                seamless social mapping experience. Engineered an automated
+                scheduling engine that leverages LLM tool calling and the Google
+                Calendar FreeBusy API to analyze collective availability and
+                propose optimal session times. Optimized indoor navigation by
+                fusing CoreLocation geofencing with a 60Hz sensor loop,
+                incorporating ARKit, barometer data, and accelerometer inputs,
+                to render stable 3D beacons through walls, overcoming GPS
+                limitations in multi-floor buildings.
+              </p>
             </div>
+            <!-- Portfolio Website-->
             <div class="project-card">
-              <h3>LLM Evaluation Platform</h3>
-              <p>LangSmith-integrated framework for AI benchmarking.</p>
+              <div class="project-card-header">
+                <h3>This Portfolio Website</h3>
+                <span class="project-date">Winter 2026</span>
+              </div>
+              <p><strong>Technologies: </strong>HTML, CSS, JS</p>
+              <p>
+                Built a responsive personal portfolio website with collapsible
+                sections for professional experience, technical projects, and
+                school projects. Deployed with custom domain configuration on
+                GitHub Pages and optimized for both desktop and mobile devices
+                using modern CSS Grid and responsive design patterns.
+              </p>
+              <div class="project-card-footer">
+                <a
+                  href="https://github.com/Shota-Gen/Shota-Gen.github.io"
+                  target="_blank"
+                  class="project-github-btn"
+                >
+                  <img src="github_icon.svg" alt="GitHub" />
+                  View Repository
+                </a>
+              </div>
+            </div>
+            <!-- AutoVolume -->
+            <div class="project-card">
+              <div class="project-card-header">
+                <h3>AutoVolume</h3>
+                <span class="project-date">MHacks 2025</span>
+              </div>
+              <p>
+                <strong>Technologies: </strong>Swift, SwiftUI, AVFoundation,
+                CoreAudio, macOS
+              </p>
+              <p>
+                Built a macOS menubar application that intelligently adjusts
+                system output volume based on real-time ambient noise levels.
+                The system continuously monitors microphone input using
+                AVAudioEngine, calculates ambient dB levels via RMS analysis,
+                and maintains a proportional volume-to-noise ratio to
+                automatically adapt playback volume in dynamic environments. To
+                prevent audio feedback loops, we established an initial
+                noise-to-volume ratio at startup and applied consistent
+                proportional scaling, avoiding reactive feedback where output
+                volume increases cause the system to detect more noise.
+                Integrated CoreAudio APIs to seamlessly control system volume
+                while handling permissions and ensuring robust audio engine
+                state management.
+              </p>
+              <p>
+                Main Use Case: So that we can hear our YouTube video while
+                cleaning the dishes or vacuuming the floor.
+              </p>
+              <div class="project-card-footer">
+                <a
+                  href="https://github.com/LeonLiur/autovolume"
+                  target="_blank"
+                  class="project-github-btn"
+                >
+                  <img src="github_icon.svg" alt="GitHub" />
+                  View Repository
+                </a>
+              </div>
+            </div>
+            <!-- BookToManga -->
+            <div class="project-card">
+              <div class="project-card-header">
+                <h3>BookToManga</h3>
+                <span class="project-date">Winter 2026</span>
+              </div>
+              <p>
+                <strong>Technologies: </strong>Python, Stable Diffusion, Meta
+                SAM, LLMs
+              </p>
+              <p>
+                Automated the end-to-end conversion of long-form literary prose
+                into serialized manga by engineering a multi-stage pipeline that
+                transforms raw text into visually consistent comic panels.
+                Developed a prompt engineering framework to instruct LLMs to
+                generate granular storyboard descriptions, detailing character
+                anatomy, foreground elements, and background environments, which
+                served as inputs for custom Stable Diffusion models and LoRAs.
+                Integrated Meta’s Segment Anything (SAM) and custom Python
+                scripts to automate panel segmentation, dialogue bubble
+                injection, and layout assembly.
+              </p>
+            </div>
+            <!-- AniRec -->
+            <div class="project-card">
+              <div class="project-card-header">
+                <h3>AniRec (Pre-LLM)</h3>
+                <span class="project-date">Summer 2021</span>
+              </div>
+              <p>
+                <strong>Technologies: </strong>Python, Flask, SQLite, HTML/CSS,
+                JavaScript
+              </p>
+              <p>
+                Built a full-stack web application that recommends anime titles
+                based on user preferences using genre filtering and search
+                functionality. Processed a CSV dataset of 12,000+ anime entries
+                into a SQLite database, then implemented dynamic genre-based
+                filtering with partial string matching to surface relevant
+                recommendations sorted by rating and popularity. Created an
+                intuitive web interface allowing users to search by anime name
+                or select multiple genres to discover top-rated titles. Overcame
+                challenges in handling multi-genre anime entries and optimizing
+                database queries for real-time search performance.
+              </p>
+              <div class="project-card-footer">
+                <a
+                  href="https://github.com/Shota-Gen/AniRec"
+                  target="_blank"
+                  class="project-github-btn"
+                >
+                  <img src="github_icon.svg" alt="GitHub" />
+                  View Repository
+                </a>
+              </div>
+            </div>
+            <!-- ToDo List-->
+            <div class="project-card">
+              <div class="project-card-header">
+                <h3>ToDo List (Pre-LLM)</h3>
+                <span class="project-date">Winter 2017</span>
+              </div>
+              <p>
+                <strong>Technologies: </strong>Swift, UIKit, Core Data, XCode
+              </p>
+              <p>
+                Developed an iOS to-do list application featuring date-based
+                task filtering and persistent data storage using Core Data.
+                Implemented swipe gesture navigation to allow users to browse
+                tasks across different dates, with support for task creation,
+                editing, and completion tracking via custom checkbox states.
+                Designed a multi-attribute task system capturing goals,
+                deadlines, consequences, and creation dates, leveraging
+                delegation patterns for seamless view controller communication
+                and data synchronization.
+              </p>
+              <div class="project-card-footer">
+                <a
+                  href="https://github.com/Shota-Gen/todolist"
+                  target="_blank"
+                  class="project-github-btn"
+                >
+                  <img src="github_icon.svg" alt="GitHub" />
+                  View Repository
+                </a>
+              </div>
             </div>
           </div>
         </div>
