@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // keyboard + fallback ARIA for dropdown headers
+  // keyboard + fallback ARIA for all dropdown headers
   const headers = document.querySelectorAll(".section-header");
   headers.forEach((header) => {
     if (!header.hasAttribute("tabindex")) header.setAttribute("tabindex", "0");
