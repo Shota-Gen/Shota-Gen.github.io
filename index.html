@@ -54,6 +54,15 @@
   @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
   .photo-tag{position:relative;z-index:2;margin:18px auto 0;width:fit-content;display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;color:var(--muted);background:var(--panel);border:1px solid var(--stroke);padding:6px 14px;border-radius:100px;backdrop-filter:blur(8px)}
   .photo-tag .loc-dot{width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 8px var(--mint)}
+  /* CURRENTLY banner */
+  .currently{margin-top:10px}
+  .cur-card{display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:16px 22px}
+  .cur-badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mint);white-space:nowrap}
+  .cur-dot{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 10px var(--mint);animation:curpulse 2s ease-in-out infinite}
+  @keyframes curpulse{0%,100%{opacity:1}50%{opacity:.25}}
+  .cur-text{flex:1;min-width:240px;color:var(--muted);font-size:.95rem}
+  .cur-text b{color:var(--text)}
+  .cur-text a{color:var(--mint)}
   @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-right{order:-1}.photo-wrap{max-width:260px}}
   .pill{display:inline-flex;align-items:center;gap:9px;font-size:.82rem;color:var(--muted);background:var(--panel);border:1px solid var(--stroke);padding:7px 16px;border-radius:100px;margin-bottom:26px}
   .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 10px var(--mint)}
@@ -231,6 +240,13 @@
     <div class="gcard stat"><div class="num">5</div><div class="lbl">roles · 3 countries</div></div>
   </div>
 </header>
+
+<div class="wrap currently">
+  <div class="gcard cur-card">
+    <span class="cur-badge"><span class="cur-dot"></span>Currently</span>
+    <span class="cur-text">Interning as a <b>Software Engineer at <a href="https://pursuit.us" target="_blank" rel="noopener">Pursuit</a></b> — building features in the live product used by public-sector sales teams.</span>
+  </div>
+</div>
 
 <section id="journey" class="wrap reveal">
   <div class="sec-head"><div class="eyebrow">01 — Origin</div><h2>The journey here</h2></div>
