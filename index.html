@@ -15,11 +15,11 @@
     --sans:'Inter',sans-serif; --disp:'Sora',sans-serif; --mono:'JetBrains Mono',monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scroll-padding-top:80px}
   body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;overflow-x:hidden}
   ::selection{background:rgba(255,122,198,.32)}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1000px;margin:0 auto;padding:0 26px;position:relative;z-index:2}
+  .wrap{max-width:1000px;margin:0 auto;padding-inline:26px;position:relative;z-index:2}
 
   /* dusk ambient bg */
   .ambient{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
@@ -44,7 +44,17 @@
   @media(max-width:760px){.nav-links{display:none}}
 
   /* HERO */
-  header{padding:88px 0 50px}
+  header.wrap{padding-block:15px 50px}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+  .hero-right{display:flex;justify-content:center}
+  .photo-wrap{position:relative;width:100%;max-width:330px}
+  .photo-wrap::before{content:'';position:absolute;inset:-26px;border-radius:34px;z-index:0;background:radial-gradient(circle at 50% 35%,rgba(255,122,198,.4),rgba(122,168,255,.28) 45%,transparent 72%);filter:blur(26px)}
+  .photo-frame{position:relative;z-index:1;border-radius:22px;overflow:hidden;border:1px solid var(--stroke-2);background:var(--panel);box-shadow:0 30px 70px rgba(0,0,0,.5);animation:floaty 6.5s ease-in-out infinite}
+  .photo-frame img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:top center}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .photo-tag{position:relative;z-index:2;margin:18px auto 0;width:fit-content;display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.72rem;color:var(--muted);background:var(--panel);border:1px solid var(--stroke);padding:6px 14px;border-radius:100px;backdrop-filter:blur(8px)}
+  .photo-tag .loc-dot{width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 8px var(--mint)}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:40px}.hero-right{order:-1}.photo-wrap{max-width:260px}}
   .pill{display:inline-flex;align-items:center;gap:9px;font-size:.82rem;color:var(--muted);background:var(--panel);border:1px solid var(--stroke);padding:7px 16px;border-radius:100px;margin-bottom:26px}
   .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 10px var(--mint)}
   h1.hero{font-family:var(--disp);font-weight:800;font-size:clamp(2.8rem,8vw,5.4rem);line-height:1.02;letter-spacing:-.03em;
@@ -54,7 +64,7 @@
   .lede{color:var(--muted);max-width:600px;margin-top:22px;font-size:1.04rem}
   .lede b{color:var(--text);font-weight:600}
   .cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
-  .btn{font-weight:600;font-size:.9rem;padding:13px 24px;border-radius:100px;transition:all .25s;display:inline-flex;gap:8px;align-items:center;border:1px solid var(--stroke-2);color:var(--text)}
+  .btn{font-weight:600;font-size:.9rem;line-height:1;padding:13px 24px;border-radius:100px;transition:all .25s;display:inline-flex;gap:8px;align-items:center;justify-content:center;border:1px solid var(--stroke-2);color:var(--text)}
   .btn.grad{background:linear-gradient(120deg,var(--pink),var(--violet));color:#1a0c1a;border:none;font-weight:600}
   .btn.grad:hover{box-shadow:0 14px 40px rgba(255,122,198,.4);transform:translateY(-3px)}
   .btn.ghost{background:var(--panel)}
@@ -81,10 +91,10 @@
   .stat .lbl{color:var(--muted);font-size:.78rem;margin-top:5px}
 
   /* SECTIONS */
-  section{padding:120px 0 40px;position:relative}
+  section.wrap{padding-block:0px 40px;position:relative}
   section:not(#journey)::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:1000px;height:1px;background:linear-gradient(90deg,transparent,var(--stroke-2),transparent)}
-  @media(max-width:760px){section{padding:80px 0 30px}}
-  .sec-head{margin-bottom:48px}
+  @media(max-width:760px){section.wrap{padding-block:80px 30px}}
+  .sec-head{margin-bottom:10px}
   .sec-head .eyebrow{font-family:var(--mono);font-size:.76rem;letter-spacing:.18em;color:var(--violet);text-transform:uppercase}
   .sec-head h2{font-family:var(--disp);font-weight:700;font-size:clamp(1.7rem,4vw,2.5rem);margin-top:8px;letter-spacing:-.02em}
 
@@ -188,27 +198,36 @@
 </nav>
 
 <header class="wrap">
-  <div class="pill"><span class="dot"></span>Available for SWE roles · Ann Arbor / Remote</div>
-  <h1 class="hero">Shota Gen</h1>
-  <div class="hero-sub">I build <span id="role">LLM evaluation systems</span></div>
-  <p class="lede">CS @ the <b>University of Michigan</b>, designing AI infrastructure, data pipelines, and full-stack products. Raised across <b>Tokyo, Singapore, and the US</b> — building thoughtful software is my late-night flow state. Currently shipping AI infra at Pursuit.</p>
-  <div class="cta">
-    <a class="btn grad" href="resume.pdf" target="_blank">View résumé</a>
-    <a class="btn ghost" href="https://github.com/Shota-Gen" target="_blank">GitHub ↗</a>
-    <a class="btn ghost" href="https://www.linkedin.com/in/shota-gen/" target="_blank">LinkedIn ↗</a>
-  </div>
-
-  <div class="np">
-    <div class="art">🎧</div>
-    <div class="meta"><div class="now">Now building</div><b>StudyConnect</b><span>iOS · real-time peer coordination</span></div>
-    <div class="wave"><i style="animation-delay:0s"></i><i style="animation-delay:.15s"></i><i style="animation-delay:.35s"></i><i style="animation-delay:.1s"></i><i style="animation-delay:.28s"></i><i style="animation-delay:.42s"></i></div>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="pill"><span class="dot"></span>Available for SWE roles · Ann Arbor / Remote</div>
+      <h1 class="hero">Shota Gen</h1>
+      <div class="hero-sub">I build <span id="role">LLM evaluation systems</span></div>
+      <p class="lede">CS @ the <b>University of Michigan</b>, designing AI infrastructure, data pipelines, and full-stack products. Raised across <b>Tokyo, Singapore, and the US</b> — building thoughtful software is my late-night flow state. Currently shipping AI infra at Pursuit.</p>
+      <div class="cta">
+        <a class="btn grad" href="resume.pdf" target="_blank">View résumé</a>
+        <a class="btn ghost" href="https://github.com/Shota-Gen" target="_blank">GitHub ↗</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/shota-gen/" target="_blank">LinkedIn ↗</a>
+      </div>
+      <div class="np">
+        <div class="art">🎧</div>
+        <div class="meta"><div class="now">Now building</div><b>StudyConnect</b><span>iOS · real-time peer coordination</span></div>
+        <div class="wave"><i style="animation-delay:0s"></i><i style="animation-delay:.15s"></i><i style="animation-delay:.35s"></i><i style="animation-delay:.1s"></i><i style="animation-delay:.28s"></i><i style="animation-delay:.42s"></i></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="photo-wrap">
+        <div class="photo-frame"><img src="linkedin_pfp.png" alt="Shota Gen" /></div>
+        <div class="photo-tag"><span class="loc-dot"></span>Tokyo · Singapore · Michigan</div>
+      </div>
+    </div>
   </div>
 
   <div class="stats">
-    <div class="gcard stat"><div class="num">7.4M</div><div class="lbl">records verified</div></div>
+    <div class="gcard stat"><div class="num">7.4M</div><div class="lbl">contacts AI-verified</div></div>
     <div class="gcard stat"><div class="num">90%</div><div class="lbl">faster benchmarking</div></div>
     <div class="gcard stat"><div class="num">$90K</div><div class="lbl">annual cost saved</div></div>
-    <div class="gcard stat"><div class="num">5</div><div class="lbl">roles · 4 countries</div></div>
+    <div class="gcard stat"><div class="num">5</div><div class="lbl">roles · 3 countries</div></div>
   </div>
 </header>
 
@@ -313,11 +332,11 @@
   </div>
 </section>
 
-<section id="contact" class="wrap reveal">
+<section id="contact" class="wrap reveal contact">
   <div class="gcard panel">
     <h2>Let's build something.</h2>
-    <p>Open to software engineering roles and ambitious collaborations. Fastest reply is by email.</p>
-    <a class="btn grad" href="mailto:shota.gen@pursuit.us">shota.gen@pursuit.us</a>
+    <p>Open to software engineering roles and ambitious collaborations. Hit me up!</p>
+    <a class="btn grad" href="mailto:shots.gen@gmail.com">shots.gen@gmail.com</a>
   </div>
 </section>
 
