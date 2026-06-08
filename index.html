@@ -153,6 +153,20 @@
   .contact p{color:var(--muted);max-width:460px;margin:18px auto 28px}
   footer{padding:34px 0;text-align:center;color:var(--dim);font-size:.8rem;border-top:1px solid var(--stroke)}
 
+  /* clickable company name */
+  a.co{text-decoration:none;display:inline-flex;align-items:center;gap:7px;width:fit-content;transition:color .2s}
+  a.co .ext{font-size:.72rem;color:var(--dim);transition:color .2s}
+  a.co:hover{color:var(--pink)}
+  a.co:hover .ext{color:var(--pink)}
+
+  /* COURSEWORK */
+  .cw{padding:26px 28px}
+  .cw .grp{margin-bottom:16px}
+  .cw .grp:last-of-type{margin-bottom:0}
+  .cw .gl{font-family:var(--mono);font-size:.72rem;color:var(--violet);letter-spacing:.08em;text-transform:uppercase;margin-bottom:9px}
+  .cw .note{color:var(--muted);font-size:.86rem;margin-top:18px;border-top:1px solid var(--stroke);padding-top:16px}
+  .cw .note a{color:var(--mint)}
+
   .reveal{opacity:0;transform:translateY(28px);transition:all .8s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
 </style>
@@ -165,7 +179,7 @@
   <div class="nav-in">
     <div class="brand"><span class="orb"></span>Shota Gen</div>
     <div class="nav-links">
-      <a href="#journey">Journey</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#beyond">Beyond code</a><a href="#contact">Contact</a>
+      <a href="#journey">Journey</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#coursework">Coursework</a><a href="#beyond">Beyond code</a><a href="#contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -214,7 +228,7 @@
   <div class="sec-head"><div class="eyebrow">02 — Career</div><h2>Where I've worked</h2></div>
   <div class="exp">
     <div class="gcard ecard">
-      <div class="ecard-top"><div><div class="co">Pursuit</div><div class="role">Software Engineer</div><div class="loc">Pre-RFP Intelligence Platform · Ann Arbor, MI</div></div><span class="when">Summer 2025</span></div>
+      <div class="ecard-top"><div><a class="co" href="https://pursuit.us" target="_blank" rel="noopener">Pursuit<span class="ext">↗</span></a><div class="role">Software Engineer</div><div class="loc">Pre-RFP Intelligence Platform · Ann Arbor, MI</div></div><span class="when">Summer 2025</span></div>
       <ul>
         <li>Architected an LLM evaluation platform with LangSmith + Docker, cutting benchmarking from 8 hrs to 10 min across 400+ runs.</li>
         <li>Engineered a 3-LLM chained analysis microservice (NestJS) lifting contact verification from 72% → 91% across 7.4M records.</li>
@@ -224,7 +238,7 @@
       <div class="tags"><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">Docker</span><span class="tag">AWS</span><span class="tag">LangSmith</span><span class="tag">NestJS</span></div>
     </div>
     <div class="gcard ecard">
-      <div class="ecard-top"><div><div class="co">Rakmy</div><div class="role">Software Engineer Intern</div><div class="loc">Restaurant Data Platform · Shibuya, Tokyo</div></div><span class="when">Summer 2024</span></div>
+      <div class="ecard-top"><div><a class="co" href="https://rakmy.jp" target="_blank" rel="noopener">Rakmy<span class="ext">↗</span></a><div class="role">Software Engineer Intern</div><div class="loc">Restaurant Data Platform · Shibuya, Tokyo</div></div><span class="when">Summer 2024</span></div>
       <ul>
         <li>Built AI-assisted image extraction with the Anthropic API — cut manual entry 95%, hit 90% accuracy, saved ~$90K annually.</li>
         <li>Shipped two data-wrangling APIs to AWS RDS and deployed an image-extraction API on AWS Lambda.</li>
@@ -233,7 +247,7 @@
       <div class="tags"><span class="tag">Python</span><span class="tag">Anthropic API</span><span class="tag">AWS Lambda</span><span class="tag">RDS</span><span class="tag">CloudWatch</span></div>
     </div>
     <div class="gcard ecard">
-      <div class="ecard-top"><div><div class="co">Rutilea</div><div class="role">Project Manager Intern</div><div class="loc">AI Development Platform · Kyoto, Japan</div></div><span class="when">Summer 2022</span></div>
+      <div class="ecard-top"><div><a class="co" href="https://rutilea.com" target="_blank" rel="noopener">Rutilea<span class="ext">↗</span></a><div class="role">Project Manager Intern</div><div class="loc">AI Development Platform · Kyoto, Japan</div></div><span class="when">Summer 2022</span></div>
       <ul>
         <li>Led a team of 2 to build 'SmartBot', integrating a Slack bot with the Google Sheets API — cut delivery time 40%.</li>
         <li>Managed the lifecycle with Agile and pitched the business case to the CEO as a new revenue line.</li>
@@ -241,7 +255,7 @@
       <div class="tags"><span class="tag">Python</span><span class="tag">Node.js</span><span class="tag">React</span></div>
     </div>
     <div class="gcard ecard">
-      <div class="ecard-top"><div><div class="co">Gnowbe</div><div class="role">Front-End Development Intern</div><div class="loc">Microlearning Platform · Singapore</div></div><span class="when">Summer 2022</span></div>
+      <div class="ecard-top"><div><a class="co" href="https://gnowbe.com" target="_blank" rel="noopener">Gnowbe<span class="ext">↗</span></a><div class="role">Front-End Development Intern</div><div class="loc">Microlearning Platform · Singapore</div></div><span class="when">Summer 2022</span></div>
       <ul>
         <li>Built interactive UI components for the main site (Webflow + Canva) used by 2,000+ monthly visitors.</li>
         <li>Produced tutorial videos for 50+ company clients and 1,000+ individual users.</li>
@@ -249,7 +263,7 @@
       <div class="tags"><span class="tag">Webflow</span><span class="tag">Canva</span><span class="tag">Loom</span><span class="tag">Illustrator</span></div>
     </div>
     <div class="gcard ecard">
-      <div class="ecard-top"><div><div class="co">Mars Flag</div><div class="role">Full-Stack Development Intern</div><div class="loc">Search Technology · Chuo, Tokyo</div></div><span class="when">Summer 2021</span></div>
+      <div class="ecard-top"><div><a class="co" href="https://www.marsflag.com/en/" target="_blank" rel="noopener">Mars Flag<span class="ext">↗</span></a><div class="role">Full-Stack Development Intern</div><div class="loc">Search Technology · Chuo, Tokyo</div></div><span class="when">Summer 2021</span></div>
       <ul><li>Built a full-stack website that recommends anime from user preferences using the full web stack.</li></ul>
       <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">JS</span></div>
     </div>
@@ -276,8 +290,18 @@
   </div>
 </section>
 
+<section id="coursework" class="wrap reveal">
+  <div class="sec-head"><div class="eyebrow">05 — Education</div><h2>Coursework @ Michigan</h2></div>
+  <div class="gcard cw">
+    <div class="grp"><div class="gl">Systems &amp; architecture</div><div class="tags"><span class="tag">EECS 482 · Operating Systems</span><span class="tag">EECS 370 · Computer Organization</span></div></div>
+    <div class="grp"><div class="gl">Software &amp; algorithms</div><div class="tags"><span class="tag">EECS 481 · Software Engineering</span><span class="tag">EECS 281 · Data Structures &amp; Algorithms</span><span class="tag">EECS 280 · Programming &amp; Data Structures</span></div></div>
+    <div class="grp"><div class="gl">AI &amp; web</div><div class="tags"><span class="tag">EECS 445 · Machine Learning</span><span class="tag">EECS 485 · Web Systems</span></div></div>
+    <p class="note">Highlights include a Unix thread library, a Hadoop-style MapReduce engine, a MapReduce-backed search engine, a PyTorch CNN image classifier, and automated testing &amp; fault-localization tooling. Full detail in my <a href="resume.pdf" target="_blank">résumé</a>.</p>
+  </div>
+</section>
+
 <section id="beyond" class="wrap reveal">
-  <div class="sec-head"><div class="eyebrow">05 — Off the clock</div><h2>Beyond code</h2></div>
+  <div class="sec-head"><div class="eyebrow">06 — Off the clock</div><h2>Beyond code</h2></div>
   <div class="bg">
     <div class="gcard bc"><div class="ico">⚔️</div><h4>League of Legends</h4><p>Peaked Masters. I don't grind much anymore, but I still follow the esports scene closely.</p><div class="meta">RANK · MASTERS</div></div>
     <div class="gcard bc"><div class="ico">🎮</div><h4>Gaming</h4><p>A lifelong gamer across genres. Most recently deep in Fire Emblem: Three Houses.</p><div class="meta">NOW PLAYING · FE3H</div></div>
